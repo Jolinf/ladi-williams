@@ -1,0 +1,465 @@
+.hero {
+  position: relative;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 56px var(--gutter) 60px;
+}
+
+.darkFooterWrap {
+  background-color: #111111;
+  background-image: url("/images/noise-texture.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.heroGlow {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1280 / 501;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.heroName {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: clamp(130px, 12.5vw, 220px);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.heroImageWrap {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1280 / 501;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.heroRoles {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 40px;
+  margin-bottom: 24px;
+}
+
+.heroRoles span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+}
+
+.heroHeading {
+  position: relative;
+  z-index: 3;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-black);
+  max-width: 700px;
+  margin-bottom: 32px;
+}
+
+.heroActions {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.sectionHead {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.viewAll {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.works {
+  padding: 40px 0 100px;
+}
+
+.worksGrid {
+  max-width: var(--container-width);
+  margin: 24px auto 0;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.services {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 40px var(--gutter) 100px;
+}
+
+.servicesHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.servicesHeading {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 36px;
+  color: var(--color-muted);
+  max-width: 620px;
+  margin: 0;
+  text-align: left;
+}
+
+.servicesGrid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.serviceCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+}
+
+.serviceCardDark {
+  z-index: 1;
+}
+
+.serviceCardDark .serviceCardHeader {
+  background: #111111;
+  color: var(--color-white);
+}
+
+.serviceCardDark .serviceTitleFlip {
+  color: var(--color-white);
+}
+
+.serviceCardHeader {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 18px 18px 18px 22px;
+  margin-bottom: -22px;
+  box-shadow:
+    0.47px 0.47px 0.67px -0.2px rgba(0, 0, 0, 0.05),
+    1.29px 1.29px 1.83px -0.4px rgba(0, 0, 0, 0.06),
+    2.84px 2.84px 4.01px -0.6px rgba(0, 0, 0, 0.08),
+    6.29px 6.29px 8.9px -0.8px rgba(0, 0, 0, 0.11),
+    16px 16px 22.63px -1px rgba(0, 0, 0, 0.15);
+}
+
+.serviceTitleFlip {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 24px;
+  overflow: hidden;
+  perspective: 400px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--color-black);
+}
+
+.serviceTitleDefault,
+.serviceTitleHover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  backface-visibility: hidden;
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+  white-space: nowrap;
+}
+
+.serviceTitleDefault {
+  transform: rotateX(0deg);
+  transform-origin: 50% 100%;
+}
+
+.serviceTitleHover {
+  transform: rotateX(90deg);
+  transform-origin: 50% 0%;
+}
+
+.serviceCardHeader:hover .serviceTitleDefault {
+  transform: rotateX(-90deg);
+}
+
+.serviceCardHeader:hover .serviceTitleHover {
+  transform: rotateX(0deg);
+}
+
+.serviceIconBadge {
+  position: relative;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.serviceIconDefault,
+.serviceIconHover {
+  position: absolute;
+  inset: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.3s ease;
+}
+
+.serviceIconDefault {
+  transform: rotate(0deg);
+}
+
+.serviceIconHover {
+  transform: rotate(-45deg);
+  opacity: 0;
+}
+
+.serviceCardHeader:hover .serviceIconDefault {
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.serviceCardHeader:hover .serviceIconHover {
+  transform: rotate(0deg);
+  opacity: 1;
+}
+
+.serviceIconBadge svg {
+  width: 18px;
+  height: 18px;
+}
+
+.accentYellow {
+  background: #fdf1c8;
+  color: #8a6d1c;
+}
+
+.accentPurple {
+  background: #ffffff;
+  color: #111111;
+}
+
+.accentGreen {
+  background: #d9f2e0;
+  color: #1f7a43;
+}
+
+.serviceCardDark .serviceIconBadge {
+  background: #ffffff;
+  color: #111111;
+}
+
+.serviceCardBody {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgb(247, 247, 247);
+  border-radius: 24px;
+  padding: 44px 24px 24px;
+  transition: opacity 0.15s linear;
+}
+
+.serviceCard:hover .serviceCardBody {
+  opacity: 0.35;
+}
+
+.serviceCardDark .serviceCardBody {
+  background: #111111;
+  color: var(--color-white);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.45);
+}
+
+.serviceDescription {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-muted);
+  flex: 1;
+}
+
+.serviceCardDark .serviceDescription {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.serviceTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.serviceTag {
+  font-size: 13px;
+  font-weight: 500;
+  background: #eeeeee;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 8px 14px;
+  color: var(--color-muted);
+}
+
+.serviceCardDark .serviceTag {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--color-white);
+}
+
+.process {
+  position: relative;
+  background-color: #111111;
+  background-image: url("/images/noise-texture.webp");
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0 100px;
+}
+
+.processInner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.processLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+.processHeading {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 36px;
+  color: #ffffff;
+  max-width: 640px;
+  margin-top: 20px;
+  margin-bottom: 56px;
+}
+
+.processList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 0 0 auto;
+}
+
+.processStep {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 66%;
+  background: #111111;
+  border-radius: 24px;
+  padding: 28px;
+}
+
+.processStep:nth-child(even) {
+  align-self: flex-end;
+}
+
+.processNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: linear-gradient(0deg, #1f1f1f 0%, #111111 100%);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--color-muted);
+}
+
+.processTitle {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 22px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.processDescription {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+@media (max-width: 809.98px) {
+  .processStep {
+    width: 100%;
+  }
+
+  .processStep:nth-child(even) {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 809.98px) {
+  .heroHeading {
+    font-size: 28px;
+  }
+
+  .sectionHead {
+    align-items: flex-start;
+  }
+
+  .worksGrid {
+    grid-template-columns: 1fr;
+  }
+}

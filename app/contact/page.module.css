@@ -1,0 +1,70 @@
+.intro {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 100px var(--gutter) 40px;
+  text-align: center;
+}
+
+.headline {
+  font-size: 44px;
+  color: #9aa0a8;
+}
+
+.grid {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 100px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.infoCard {
+  background: var(--color-card-light);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.infoIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #7c5cff, #2b2b6b);
+}
+
+.infoText {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.infoBadge {
+  align-self: flex-start;
+  background: var(--color-white);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.callButton {
+  margin-top: auto;
+  background: var(--color-white);
+}
+
+@media (max-width: 1199.98px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 809.98px) {
+  .headline {
+    font-size: 30px;
+  }
+}

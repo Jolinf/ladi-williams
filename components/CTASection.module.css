@@ -1,0 +1,57 @@
+.cta {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-white);
+  text-align: center;
+  padding: 100px var(--gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.iconWrap {
+  position: relative;
+  z-index: 1;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 4px;
+}
+
+.icon {
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.heading {
+  position: relative;
+  z-index: 1;
+  font-size: 40px;
+  max-width: 640px;
+  color: var(--color-white);
+}
+
+.dim {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.button {
+  position: relative;
+  z-index: 1;
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+@media (max-width: 809.98px) {
+  .heading {
+    font-size: 28px;
+  }
+}
