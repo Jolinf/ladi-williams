@@ -115,7 +115,18 @@ export default function HomePage() {
         <div className={styles.sectionHead}>
           <span className="sectionLabel">Featured works</span>
           <Link href="/works" className={styles.viewAll}>
-            All Works
+            <span className={styles.viewAllText}>All Works</span>
+            <span className={styles.viewAllIcon} aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5 12h14M13 6l6 6-6 6"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
           </Link>
         </div>
         <div className={styles.worksGrid}>

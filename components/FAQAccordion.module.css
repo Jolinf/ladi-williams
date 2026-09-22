@@ -114,3 +114,10 @@
     padding: 72px var(--gutter);
   }
 }
+
+@media (max-width: 809.98px) {
+  .heading {
+    font-size: 28px;
+    font-weight: 500;
+  }
+}

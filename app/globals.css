@@ -159,4 +159,8 @@ img {
   :root {
     --gutter: 20px;
   }
+
+  .sectionLabel {
+    font-size: 28px;
+  }
 }

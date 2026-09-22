@@ -157,9 +157,29 @@
 }
 
 .viewAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 14px;
   font-weight: 600;
   color: var(--color-muted);
+}
+
+.viewAllIcon {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--color-card-light);
+  color: var(--color-black);
+  flex-shrink: 0;
+}
+
+.viewAllIcon svg {
+  width: 20px;
+  height: 20px;
 }
 
 .works {
@@ -507,15 +527,81 @@
 }
 
 @media (max-width: 809.98px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 20px var(--gutter) 0;
+    overflow: visible;
+  }
+
+  .heroName,
+  .heroBlur {
+    display: none;
+  }
+
+  .heroRoles {
+    order: 0;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
   .heroHeading {
-    font-size: 28px;
+    order: 1;
+    font-size: 32px;
+    max-width: 100%;
+  }
+
+  .heroActions {
+    order: 2;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .heroActions a {
+    width: 100%;
+  }
+
+  .heroImageWrap {
+    order: 3;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 420px;
+    margin-top: 24px;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
   }
 
   .sectionHead {
+    flex-direction: column;
     align-items: flex-start;
+    gap: 16px;
+  }
+
+  .viewAllText {
+    display: none;
+  }
+
+  .viewAllIcon {
+    display: inline-flex;
   }
 
   .worksGrid {
     grid-template-columns: 1fr;
+  }
+
+  .servicesHeader {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .servicesHeading {
+    font-size: 28px;
+  }
+
+  .processHeading {
+    font-size: 28px;
   }
 }

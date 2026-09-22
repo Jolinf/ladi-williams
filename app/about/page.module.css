@@ -259,7 +259,11 @@
 
 @media (max-width: 809.98px) {
   .headline {
-    font-size: 30px;
+    font-size: 32px;
+  }
+
+  .bioHeading {
+    font-size: 28px;
   }
 
   .experienceInner {

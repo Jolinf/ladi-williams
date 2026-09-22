@@ -70,4 +70,13 @@
   .videoGrid {
     grid-template-columns: 1fr;
   }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .videosHeading {
+    font-size: 32px;
+    font-weight: 500;
+  }
 }
