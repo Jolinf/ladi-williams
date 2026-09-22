@@ -210,15 +210,19 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  gap: 6px;
   min-height: 320px;
+  background: #f7f7f7;
+  border-radius: 24px;
+  padding: 6px;
 }
 
 .serviceCardDark {
-  z-index: 1;
+  background: #111111;
 }
 
 .serviceCardDark .serviceCardHeader {
-  background: #111111;
+  background: #1f1f1f;
   color: var(--color-white);
 }
 
@@ -227,22 +231,17 @@
 }
 
 .serviceCardHeader {
-  position: relative;
-  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   background: #ffffff;
   border-radius: 20px;
-  padding: 18px 18px 18px 22px;
-  margin-bottom: -22px;
+  padding: 16px 16px 16px 20px;
   box-shadow:
-    0.47px 0.47px 0.67px -0.2px rgba(0, 0, 0, 0.05),
-    1.29px 1.29px 1.83px -0.4px rgba(0, 0, 0, 0.06),
-    2.84px 2.84px 4.01px -0.6px rgba(0, 0, 0, 0.08),
-    6.29px 6.29px 8.9px -0.8px rgba(0, 0, 0, 0.11),
-    16px 16px 22.63px -1px rgba(0, 0, 0, 0.15);
+    0 0.5px 0.5px rgba(0, 0, 0, 0.043),
+    0 1.9px 1.9px rgba(0, 0, 0, 0.043),
+    0 8.5px 8.5px rgba(0, 0, 0, 0.043);
 }
 
 .serviceTitleFlip {
@@ -279,11 +278,11 @@
   transform-origin: 50% 0%;
 }
 
-.serviceCardHeader:hover .serviceTitleDefault {
+.serviceCard:hover .serviceTitleDefault {
   transform: rotateX(-90deg);
 }
 
-.serviceCardHeader:hover .serviceTitleHover {
+.serviceCard:hover .serviceTitleHover {
   transform: rotateX(0deg);
 }
 
@@ -318,12 +317,12 @@
   opacity: 0;
 }
 
-.serviceCardHeader:hover .serviceIconDefault {
+.serviceCard:hover .serviceIconDefault {
   transform: rotate(45deg);
   opacity: 0;
 }
 
-.serviceCardHeader:hover .serviceIconHover {
+.serviceCard:hover .serviceIconHover {
   transform: rotate(0deg);
   opacity: 1;
 }
@@ -354,26 +353,23 @@
 }
 
 .serviceCardBody {
-  position: relative;
-  z-index: 1;
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  background: rgb(247, 247, 247);
-  border-radius: 24px;
-  padding: 44px 24px 24px;
+  gap: 32px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
   transition: opacity 0.15s linear;
 }
 
 .serviceCard:hover .serviceCardBody {
-  opacity: 0.35;
+  opacity: 0.4;
 }
 
 .serviceCardDark .serviceCardBody {
-  background: #111111;
+  background: #1f1f1f;
   color: var(--color-white);
-  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.45);
 }
 
 .serviceDescription {
@@ -390,7 +386,7 @@
 .serviceTags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .serviceTag {

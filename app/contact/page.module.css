@@ -30,10 +30,12 @@
 }
 
 .infoIcon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, #7c5cff, #2b2b6b);
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--color-card-light);
 }
 
 .infoText {

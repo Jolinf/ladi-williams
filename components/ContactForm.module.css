@@ -62,6 +62,7 @@
   padding: 16px;
   font-size: 16px;
   font-weight: 600;
+  transition: opacity 0.2s ease;
 }
 
 .submit:hover {

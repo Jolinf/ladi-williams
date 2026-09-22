@@ -41,6 +41,7 @@
   font-size: 16px;
   font-weight: 500;
   color: var(--color-text);
+  transition: color 0.2s ease;
 }
 
 .navLink:hover {

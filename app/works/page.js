@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import WorkCard from "@/components/WorkCard";
+import Reveal from "@/components/Reveal";
 import { projects, videos, videosHeading } from "@/lib/data";
 import styles from "./page.module.css";
 
@@ -17,20 +18,20 @@ export default function WorksPage() {
       <Header />
 
       <section className={styles.intro}>
-        <h1 className={styles.heading}>
-          A track record of impactful journalism, memorable events, and
-          trusted broadcasting.
-        </h1>
+        <Reveal as="h1" className={styles.heading}>
+          A track record of impactful journalism, memorable events,<span className={styles.dim}>and
+          trusted broadcasting.</span> 
+        </Reveal>
       </section>
 
-      <section className={styles.grid}>
+      <Reveal as="section" className={styles.grid} delay={100}>
         {projects.map((project) => (
           <WorkCard key={project.slug} project={project} />
         ))}
-      </section>
+      </Reveal>
 
       <section id="videos" className={styles.videos}>
-        <h2 className={styles.videosHeading}>{videosHeading}</h2>
+        <Reveal as="h2" className={styles.videosHeading}>Watch Ladi in action. From the anchor desk to the main stage,<span className={styles.dim}> every appearance tells a story</span> </Reveal>
         <div className={styles.videoGrid}>
           {videos.map((videoId) => (
             <div key={videoId} className={styles.videoWrap}>

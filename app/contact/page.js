@@ -1,7 +1,9 @@
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import ContactForm from "@/components/ContactForm";
+import Reveal from "@/components/Reveal";
 import styles from "./page.module.css";
 
 export const metadata = {
@@ -16,16 +18,24 @@ export default function ContactPage() {
       <Header />
 
       <section className={styles.intro}>
-        <h1 className={styles.headline}>
+        <Reveal as="h1" className={styles.headline}>
           Ready to deliver excellence. Reach out below.
-        </h1>
+        </Reveal>
       </section>
 
-      <section className={styles.grid}>
+      <Reveal as="section" className={styles.grid} delay={100}>
         <ContactForm />
 
         <div className={styles.infoCard}>
-          <div className={styles.infoIcon} aria-hidden="true" />
+          <div className={styles.infoIcon}>
+            <Image
+              src="/images/contact-avatar.jpeg"
+              alt="Book a call with Ladi Williams"
+              fill
+              sizes="80px"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
           <p className={styles.infoText}>
             Enquiries are responded to within 48 hours. For urgent bookings,
             please indicate in your message.
@@ -40,7 +50,7 @@ export default function ContactPage() {
             Book a Call
           </a>
         </div>
-      </section>
+      </Reveal>
 
       <div className="darkFooterWrap">
         <CTASection />

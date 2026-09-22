@@ -62,7 +62,15 @@ export default function FAQAccordion({ heading, highlight, buttonLabel, items })
                     +
                   </span>
                 </button>
-                {isOpen && <p className={styles.answer}>{item.answer}</p>}
+                <div
+                  className={`${styles.answerWrap} ${
+                    isOpen ? styles.answerWrapOpen : ""
+                  }`}
+                >
+                  <div className={styles.answerInner}>
+                    <p className={styles.answer}>{item.answer}</p>
+                  </div>
+                </div>
               </div>
             );
           })}

@@ -70,16 +70,6 @@ export default function HomePage() {
       <Header />
 
       <section className={styles.hero}>
-        {/* <div className={styles.heroGlow} aria-hidden="true">
-          <Image
-            src="/images/glow-blur.png"
-            alt=""
-            fill
-            sizes="100vw"
-            style={{ objectFit: "cover" }}
-          />
-        </div> */}
-
         <Reveal as="p" className={styles.heroName}>
           Ladi Williams
         </Reveal>
@@ -122,29 +112,23 @@ export default function HomePage() {
       </section>
 
       <section className={styles.works}>
-        <Reveal className={styles.sectionHead}>
+        <div className={styles.sectionHead}>
           <span className="sectionLabel">Featured works</span>
           <Link href="/works" className={styles.viewAll}>
             All Works
           </Link>
-        </Reveal>
+        </div>
         <div className={styles.worksGrid}>
-          {projects.map((project, index) => (
-            <Reveal key={project.slug} delay={index * 100}>
-              <WorkCard project={project} />
-            </Reveal>
+          {projects.map((project) => (
+            <WorkCard key={project.slug} project={project} />
           ))}
         </div>
       </section>
 
       <section className={styles.services}>
         <div className={styles.servicesHeader}>
-          <Reveal as="span" className="sectionLabel">
-            Services
-          </Reveal>
-          <Reveal as="h2" className={styles.servicesHeading} delay={100}>
-            {servicesHeading}
-          </Reveal>
+          <span className="sectionLabel">Services</span>
+          <h2 className={styles.servicesHeading}>{servicesHeading}</h2>
         </div>
         <div className={styles.servicesGrid}>
           {services.map((service, index) => {
@@ -155,14 +139,14 @@ export default function HomePage() {
                 ? styles.accentGreen
                 : styles.accentPurple;
             return (
-              <Reveal
+              <Link
                 key={service.title}
+                href="/contact"
                 className={`${styles.serviceCard} ${
                   index === 1 ? styles.serviceCardDark : ""
                 }`}
-                delay={index * 120}
               >
-                <Link href="/contact" className={styles.serviceCardHeader}>
+                <div className={styles.serviceCardHeader}>
                   <span className={styles.serviceTitleFlip}>
                     <span className={styles.serviceTitleDefault}>
                       {service.title}
@@ -179,7 +163,7 @@ export default function HomePage() {
                     </span>
                     <span className={styles.serviceIconHover}>{bookIcon}</span>
                   </span>
-                </Link>
+                </div>
                 <div className={styles.serviceCardBody}>
                   <p className={styles.serviceDescription}>
                     {service.description}
@@ -192,7 +176,7 @@ export default function HomePage() {
                     ))}
                   </div>
                 </div>
-              </Reveal>
+              </Link>
             );
           })}
         </div>
@@ -200,43 +184,31 @@ export default function HomePage() {
 
       <section className={styles.process}>
         <div className={styles.processInner}>
-          <Reveal as="span" className={styles.processLabel}>
-            How it works
-          </Reveal>
-          <Reveal as="h2" className={styles.processHeading} delay={100}>
-            {processHeading}
-          </Reveal>
+          <span className={styles.processLabel}>How it works</span>
+          <h2 className={styles.processHeading}>{processHeading}</h2>
           <div className={styles.processList}>
-            {processSteps.map((step, index) => (
-              <Reveal
-                key={step.number}
-                className={styles.processStep}
-                delay={index * 120}
-              >
+            {processSteps.map((step) => (
+              <div key={step.number} className={styles.processStep}>
                 <span className={styles.processNumber}>{step.number}</span>
                 <h3 className={styles.processTitle}>{step.title}</h3>
                 <p className={styles.processDescription}>
                   {step.description}
                 </p>
-              </Reveal>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <Reveal>
-        <FAQAccordion
-          heading={faqsHome.heading}
-          highlight="working with Ladi Williams"
-          buttonLabel={faqsHome.buttonLabel}
-          items={faqsHome.items}
-        />
-      </Reveal>
+      <FAQAccordion
+        heading={faqsHome.heading}
+        highlight="working with Ladi Williams"
+        buttonLabel={faqsHome.buttonLabel}
+        items={faqsHome.items}
+      />
 
       <div className="darkFooterWrap">
-        <Reveal>
-          <CTASection />
-        </Reveal>
+        <CTASection />
         <Footer />
       </div>
     </>

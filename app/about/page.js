@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import FAQAccordion from "@/components/FAQAccordion";
+import Reveal from "@/components/Reveal";
 import {
   testimonials,
   aboutHeadline,
@@ -25,10 +26,10 @@ export default function AboutPage() {
       <Header />
 
       <section className={styles.intro}>
-        <h1 className={styles.headline}>
+        <Reveal as="h1" className={styles.headline}>
           <span className={styles.dim}>The Voice Behind the Story.</span>{" "}
           The Mind Behind the Markets.
-        </h1>
+        </Reveal>
       </section>
 
       <section className={styles.showcase}>
@@ -58,31 +59,67 @@ export default function AboutPage() {
             alt="Ladi Williams"
             fill
             sizes="(max-width: 809px) 100vw, 50vw"
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover", objectPosition: "50% 0%" }}
           />
         </div>
       </section>
 
       <section className={styles.bio}>
-        <span className="sectionLabel">About Me</span>
-        <h2 className={styles.bioHeading}>{aboutSubheading}</h2>
-        <div className={styles.bioText}>
-          {aboutBio.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
+        <div className={styles.bioGrid}>
+          <span className={styles.sectionLabel}>About Me</span>
+          <div className={styles.bioContent}>
+            <h2 className={styles.bioHeading}>{aboutSubheading}</h2>
+            <div className={styles.bioText}>
+              {aboutBio.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.bioImages}>
+          <div className={styles.bioImageLarge}>
+            <Image
+              src="/images/about-gallery-1.jpeg"
+              alt="Ladi Williams"
+              fill
+              sizes="(max-width: 809px) 100vw, 60vw"
+              style={{ objectFit: "cover", objectPosition: "56% 41%" }}
+            />
+          </div>
+          <div className={styles.bioImageSmall}>
+            <Image
+              src="/images/about-gallery-2.jpeg"
+              alt="Ladi Williams"
+              fill
+              sizes="(max-width: 809px) 100vw, 40vw"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
         </div>
       </section>
 
       <section className={styles.experience}>
-        <span className="sectionLabel">Work experiences</span>
-        <div className={styles.experienceList}>
-          {workExperience.map((job) => (
-            <div key={job.role} className={styles.experienceRow}>
-              <h3 className={styles.experienceRole}>{job.role}</h3>
-              <span className={styles.experienceCompany}>{job.company}</span>
-              <span className={styles.experienceYears}>{job.years}</span>
-            </div>
-          ))}
+        <div className={styles.experienceInner}>
+          <span className="sectionLabel">Work experiences</span>
+          <div className={styles.experienceList}>
+            {workExperience.map((job, index) => (
+              <div
+                key={job.role}
+                className={
+                  index === 0
+                    ? `${styles.experienceRow} ${styles.experienceRowActive}`
+                    : styles.experienceRow
+                }
+              >
+                <h3 className={styles.experienceRole}>{job.role}</h3>
+                <div className={styles.experienceMeta}>
+                  <span className={styles.experienceCompany}>{job.company}</span>
+                  <span className={styles.experienceYears}>{job.years}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
