@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection";
 import ContactForm from "@/components/ContactForm";
 import styles from "./page.module.css";
 
@@ -41,7 +42,10 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <Footer />
+      <div className="darkFooterWrap">
+        <CTASection />
+        <Footer />
+      </div>
     </>
   );
 }

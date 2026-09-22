@@ -92,8 +92,10 @@ export default function ProjectPage({ params }) {
         </div>
       </section>
 
-      <CTASection />
-      <Footer />
+      <div className="darkFooterWrap">
+        <CTASection />
+        <Footer />
+      </div>
     </>
   );
 }

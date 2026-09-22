@@ -70,7 +70,7 @@ export default function HomePage() {
       <Header />
 
       <section className={styles.hero}>
-        <div className={styles.heroGlow} aria-hidden="true">
+        {/* <div className={styles.heroGlow} aria-hidden="true">
           <Image
             src="/images/glow-blur.png"
             alt=""
@@ -78,7 +78,7 @@ export default function HomePage() {
             sizes="100vw"
             style={{ objectFit: "cover" }}
           />
-        </div>
+        </div> */}
 
         <Reveal as="p" className={styles.heroName}>
           Ladi Williams
@@ -95,10 +95,13 @@ export default function HomePage() {
             alt="Ladi Williams"
             fill
             priority
-            sizes="120vw"
+            sizes="100vw"
             style={{ objectFit: "contain" }}
+            objectPosition="center top"
           />
         </Reveal>
+
+        <div className={styles.heroBlur} aria-hidden="true"/>
 
         <Reveal className={styles.heroRoles} delay={150}>
           {heroRoles.map((role) => (
@@ -230,7 +233,7 @@ export default function HomePage() {
         />
       </Reveal>
 
-      <div className={styles.darkFooterWrap}>
+      <div className="darkFooterWrap">
         <Reveal>
           <CTASection />
         </Reveal>

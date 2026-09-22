@@ -46,8 +46,10 @@ export default function WorksPage() {
         </div>
       </section>
 
-      <CTASection />
-      <Footer />
+      <div className="darkFooterWrap">
+        <CTASection />
+        <Footer />
+      </div>
     </>
   );
 }

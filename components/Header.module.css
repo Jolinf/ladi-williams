@@ -10,7 +10,7 @@
 .inner {
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 10px var(--gutter);
+  padding: 7px 7px;
   display: flex;
   align-items: center;
   justify-content: space-between;

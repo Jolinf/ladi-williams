@@ -2,14 +2,48 @@
   position: relative;
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 56px var(--gutter) 60px;
+
+  height: 505px;
+
+  padding: 20px 10px 0;
+
+  overflow: hidden;
 }
 
-.darkFooterWrap {
-  background-color: #111111;
-  background-image: url("/images/noise-texture.webp");
-  background-size: cover;
-  background-position: center;
+.heroBlur {
+  position: absolute;
+  z-index: 3;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 300px;
+
+  pointer-events: none;
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  ;
+
+  mask-image: linear-gradient(
+    to top,
+    white 0%,
+    white 35%,
+    rgba(255, 255, 255, 0.7) 60%,
+    rgba(255, 255, 255, 0.35) 80%,
+    transparent 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to top,
+    white 0%,
+    white 35%,
+    rgba(255, 255, 255, 0.7) 60%,
+    rgba(255, 255, 255, 0.35) 80%,
+    transparent 100%
+  );
 }
 
 .heroGlow {
@@ -18,73 +52,98 @@
   top: 0;
   left: 0;
   width: 100%;
-  aspect-ratio: 1280 / 501;
+  aspect-ratio: 1280 / 608;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 50;
 }
 
 .heroName {
   position: relative;
   z-index: 1;
+
   text-align: center;
+
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: clamp(130px, 12.5vw, 220px);
+
+  font-size: clamp(168px, 13.8vw, 238px);
   line-height: 0.9;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
+
   white-space: nowrap;
+
   color: var(--color-black);
+
   margin: 0;
 }
 
 .heroImageWrap {
   position: absolute;
   z-index: 2;
-  top: 0;
+
+  top: -28px;
   left: 0;
+
   width: 100%;
-  aspect-ratio: 1280 / 501;
-  overflow: hidden;
+  height: 600px;
+
+  overflow: visible;
   pointer-events: none;
+}
+
+.heroBottomFade {
+  position: absolute;
+  z-index: 3;
+
+  top: 80px;
+  left: 0;
+
+  width: 100%;
+  height: 650px;
+
+  pointer-events: none;
+  opacity: 0.9;
 }
 
 .heroRoles {
   position: relative;
-  z-index: 3;
+  z-index: 4;
+
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 40px;
-  margin-bottom: 24px;
+
+  margin-top: 70px;
+  margin-bottom: 16px;
 }
 
 .heroRoles span {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 9px;
+  font-weight: 400;
   color: var(--color-muted);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-black);
   border-radius: var(--radius-pill);
-  padding: 6px 14px;
+  padding: 6px 8px;
 }
 
 .heroHeading {
   position: relative;
-  z-index: 3;
+  z-index: 4;
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 40px;
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: var(--color-black);
-  max-width: 700px;
-  margin-bottom: 32px;
+  max-width: 600px;
+  margin-bottom: 16px;
 }
 
 .heroActions {
   position: relative;
-  z-index: 3;
+  z-index: 4;
   display: flex;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
@@ -105,6 +164,7 @@
 
 .works {
   padding: 40px 0 100px;
+  margin: 100px 0;
 }
 
 .worksGrid {

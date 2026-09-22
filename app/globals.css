@@ -76,10 +76,10 @@ img {
   background: var(--color-black);
   color: var(--color-white);
   border: none;
-  border-radius: var(--radius-pill);
-  padding: 12px 24px;
+  border-radius: 16px;
+  padding: 14px 20px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 450;
   white-space: nowrap;
   box-shadow:
     0.47px 0.47px 0.67px -0.2px rgba(0, 0, 0, 0.05),
@@ -132,13 +132,20 @@ img {
   background: var(--color-card-light);
 }
 
+.darkFooterWrap {
+  background-color: #111111;
+  background-image: url("/images/noise-texture.webp");
+  background-size: cover;
+  background-position: center;
+}
+
 .sectionLabel {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: var(--color-muted);
-  font-size: 14px;
-  font-weight: 600;
+  color: var(--color-black);
+  font-size: 36px;
+  font-weight: 500;
   text-transform: none;
 }
 

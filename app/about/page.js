@@ -92,8 +92,10 @@ export default function AboutPage() {
         items={faqsAbout.items}
       />
 
-      <CTASection />
-      <Footer />
+      <div className="darkFooterWrap">
+        <CTASection />
+        <Footer />
+      </div>
     </>
   );
 }
